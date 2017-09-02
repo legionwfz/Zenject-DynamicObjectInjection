@@ -1,20 +1,20 @@
-# Zenject-DynamicObject
+# Zenject-DynamicObjectInjection
 
-Zenject-DynamicObject is a tool that allows to automatically inject/bind dependencies into the prefabs instantiated at runtime by the [standard](https://docs.unity3d.com/ScriptReference/Object.Instantiate.html) Unity 3D instantiation flow.
+Zenject-DynamicObjectInjection is a tool that allows to automatically inject/bind dependencies into the prefabs instantiated at runtime by the [standard](https://docs.unity3d.com/ScriptReference/Object.Instantiate.html) Unity 3D instantiation flow.
 
-As the additional side product, it's also allowed to use all power of [Zenject](https://github.com/modesttree/Zenject) framework in [Service Locator Pattern](#service-locator-pattern) style.
+As the additional side product, it's also allow to use all power of [Zenject](https://github.com/modesttree/Zenject) framework in [Service Locator Pattern](#service-locator-pattern) style.
 
 ### What it's all about
 
-If you want to instantiate a prefab at runtime and have any MonoBehaviour's automatically injected, Zenject framework [force](https://github.com/modesttree/Zenject/blob/master/README.md#general-guidelines--recommendations--gotchas--tips-and-tricks) you to instantiate game object throw [factory](https://github.com/modesttree/Zenject/blob/master/README.md#creating-objects-dynamically) or using the special [DiContainer.InstantiatePrefab](https://github.com/modesttree/Zenject/blob/master/README.md#dicontainer-methods-instantiate) method. In most cases, it works fine, but sometimes especially if you use 3d-party solutions, it can become a problem.
+If you want to instantiate a prefab at runtime and have any MonoBehaviour's automatically injected, Zenject framework [force](https://github.com/modesttree/Zenject/blob/master/README.md#general-guidelines--recommendations--gotchas--tips-and-tricks) you to instantiate game object through [factory](https://github.com/modesttree/Zenject/blob/master/README.md#creating-objects-dynamically) or using the special [DiContainer.InstantiatePrefab](https://github.com/modesttree/Zenject/blob/master/README.md#dicontainer-methods-instantiate) method. In most cases, it works fine, but sometimes especially if you use 3d-party solutions, it can become a problem.
 
-This tool solves this problem allowing you to use standard [Object.Instantiate](https://docs.unity3d.com/ScriptReference/Object.Instantiate.html) method and will ensure any MonoBehaviour's fields that are marked with the ```[Inject]``` attribute are filled in properly, and all ```[Inject]``` methods within the prefab are called as it happens when prefab instantiated in Zenject recommended way.
+This tool solves this problem allowing you to use standard [Object.Instantiate](https://docs.unity3d.com/ScriptReference/Object.Instantiate.html) method and will ensure any MonoBehaviour's fields that are marked with the ```[Inject]``` attribute are filled in properly, and all ```[Inject]``` methods within the prefab are called as it happens when prefab is instantiated in Zenject recommended way.
 
 As an addition, this tool automatically binds all components configured in ```ZenjectBinding``` MonoBehaviour attached to the instantiated prefabs.
 
 ### How to use
 
-To inject dependencies in runtime instantiated prefab you only need to add a ```ZenjectDynamicObject``` MonoBehaviour to the root game object of the prefab.
+To inject dependencies in runtime instantiated prefab you only need to add a ```ZenjectDynamicObjectInjection``` MonoBehaviour to the root game object of the prefab.
 
 After instantiating of the prefab, all dependencies will be automatically resolved, by doing a lookup in the most 'local' container towards to the instantiated game object, and injected on Awake() phase before game object MonoBehaviour's will have their Awake() method called.
 
@@ -95,7 +95,7 @@ public class Foo : MonoBehaviour
 ```
 
 ###  License
-Zenject-DynamicObject is distributed under the MIT license. Please keep the existing headers.
+Zenject-DynamicObjectInjection is distributed under the MIT license. Please keep the existing headers.
 
 ###  Attribution
 Developer Alexandr Pereverzev - <a.v.pereverzev@gmail.com>
