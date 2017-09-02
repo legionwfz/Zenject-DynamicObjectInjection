@@ -20,7 +20,7 @@ namespace Zenject
     /// container like it happens during scene loading flow.On the game object destroys all bindings that were added 
     /// through ZenjectBinding scripts will be automatically unbinded.
     /// </remarks>
-    public class ZenjectDynamicObject : MonoBehaviour
+    public class ZenjectDynamicObjectInjection : MonoBehaviour
     {
         // We do not want to patch Zenject framework sources so we will use reflection to get to the required functionality.
         static readonly MethodInfo _contextInstallZenjectBindingMethod = typeof(Context).GetMethod("InstallZenjectBinding", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
