@@ -29,7 +29,7 @@ Moreover if you also need to bind game object MonoBehaviour's to the Zenject con
 To install the tool you need to follow next steps:
 
 1. [Install](https://github.com/modesttree/Zenject/blob/master/README.md#installation) Zenject framework v5.2.0 or higher.
-2. Clone this repo and copy the UnityProject/Assets/Plugins/ZenjectDynamicObject directory to your own Unity3D project.
+2. Clone this repo and copy the UnityProject/Assets/Plugins/ZenjectDynamicObjectInjection directory to your own Unity3D project.
 
 
 ##  <a name="service-locator-pattern"></a> Service Locator Pattern
